@@ -1,1 +1,2 @@
 spring.application.name: entry-level-java-challenge
+apiKey: ${ERU_API_KEY:super-secret-api-key}

@@ -1,0 +1,32 @@
+@URL = http://localhost:8080
+@apiKey = super-secret-api-key
+
+### Get all employees
+GET {{URL}}/api/v1/employee
+X-ERU-ApiKey: {{apiKey}}
+
+### Create a new employee
+POST {{URL}}/api/v1/employee
+X-ERU-ApiKey: {{apiKey}}
+Content-Type: application/json
+
+{
+  "firstName": "Dylan",
+  "lastName": "Miller",
+  "email": "dylan.miller@example.com",
+  "jobTitle": "Software Engineer",
+  "salary": 100000,
+  "age": 21,
+  "contractHireDate": "2025-01-15T09:00:00Z"
+}
+
+### Get employee by UUID
+GET {{URL}}/api/v1/employee/<EMPLOYEE_UUID>
+X-ERU-ApiKey: {{apiKey}}
+
+### Missing API key
+GET {{URL}}/api/v1/employee
+
+### Invalid API key
+GET {{URL}}/api/v1/employee
+X-ERU-ApiKey: wrong-key
